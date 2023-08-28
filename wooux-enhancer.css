@@ -1,6 +1,9 @@
 .input-button-group {
     display: flex;
     align-items: center;
+    gap: 5px;
+
+    margin: 10px 0;
 }
 .input-button-group button {
     background: none;
@@ -8,15 +11,27 @@
     padding: 0;
     cursor: pointer;
 }
+
+.input-button-group span:not([class]) {
+    display: none;
+} 
 	.woocommerce .quantity .wooux-plus, 
-	.woocommerce-page .quantity .wooux-plus, 
+	.woocommerce .quantity .input-button-group .wooux-plus, 
+	.woocommerce-page .quantity .wooux-plus,  
+	.woocommerce-page .quantity .input-button-group .wooux-plus, 
 	.woocommerce #content .quantity .wooux-plus, 
-	.woocommerce-page #content .quantity .wooux-plus, 
+	.woocommerce #content .quantity .input-button-group .wooux-plus, 
+	.woocommerce-page #content .quantity .wooux-plus,
+	.woocommerce-page #content .quantity .input-button-group .wooux-plus, 
 	.woocommerce .quantity .wooux-minus, 
-	.woocommerce-page .quantity .wooux-minus, 
+	.woocommerce .quantity .input-button-group .wooux-minus, 
+	.woocommerce-page .quantity .wooux-minus,  
+	.woocommerce-page .quantity .input-button-group .wooux-minus, 
 	.woocommerce #content .quantity .wooux-minus, 
-	.woocommerce-page #content .quantity .wooux-minus {
-		background: #c5c5c5 !important;
+	.woocommerce #content .quantity .input-button-group .wooux-minus, 
+	.woocommerce-page #content .quantity .wooux-minus 
+	.woocommerce-page #content .quantity .input-button-group .wooux-minus {
+		/*background: #c5c5c5 ;*/
 		border-color: none !important;
 		height: 26px !important;
 		border-top-left-radius: 4px !important;
@@ -34,7 +49,7 @@
 /* 	Hover for btn */
 	.woocommerce .quantity .wooux-plus:hover, 
 	.woocommerce .quantity .wooux-minus:hover {
-		background: #a0a0a0 !important;
+		/*background: #a0a0a0;*/
 	}
 
 	
@@ -65,11 +80,16 @@
 /* background for input	 */
 	.woocommerce .quantity input.qty,
 	.et_pb_wc_add_to_cart .quantity input.qty {
-    	text-align: center;
+    		text-align: center;
 		max-width: 3.3em;
 	}
 	.et_pb_wc_cart_products_0 .quantity input.qty, .et_pb_wc_cart_products_0 table.cart td.actions .coupon .input-text {
 		border-color: #fff !important;
+	}
+	/* input-number-center */
+	.et_pb_wc_add_to_cart_0_tb_body input, .et_pb_wc_add_to_cart_0_tb_body .quantity input.qty {
+
+    		border-radius: 5px !important;
 	}
 	
 /* none arrow for input	 */
