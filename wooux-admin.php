@@ -37,8 +37,8 @@ function wooux_admin_page() {
 
 // Register settings, sections, and fields
 function wooux_settings_init() {
-    register_setting('wooux-enhancer', 'wooux_background_color');
-    register_setting('wooux-enhancer', 'wooux_hover_background_color');
+    register_setting('wooux-enhancer', 'wooux_plusminus_background');
+    register_setting('wooux-enhancer', 'wooux_plusminus_hover_color');
 
     add_settings_section(
         'wooux_button_colors',
@@ -48,17 +48,17 @@ function wooux_settings_init() {
     );
 
     add_settings_field(
-        'wooux_background_color',
+        'wooux_plusminus_background',
         __('Background Color', 'wooux-enhancer'),
-        'wooux_background_color_render',
+        'wooux_plusminus_background_render',
         'wooux-enhancer',
         'wooux_button_colors'
     );
 
     add_settings_field(
-        'wooux_hover_background_color',
+        'wooux_plusminus_hover_color',
         __('Hover Background Color', 'wooux-enhancer'),
-        'wooux_hover_background_color_render',
+        'wooux_plusminus_hover_color_render',
         'wooux-enhancer',
         'wooux_button_colors'
     );
@@ -66,15 +66,15 @@ function wooux_settings_init() {
 
 // Render background color field
 // Render background color field
-function wooux_background_color_render() {
-    $color = get_option('wooux_background_color', '#B1B1B1');
-    echo '<input type="text" class="wooux-color-picker" name="wooux_background_color" value="' . esc_attr($color) . '">';
+function wooux_plusminus_background_render() {
+    $color = get_option('wooux_plusminus_background', '#B1B1B1');
+    echo '<input type="text" class="wooux-color-picker" name="wooux_plusminus_background" value="' . esc_attr($color) . '">';
 }
 
 // Render hover background color field
-function wooux_hover_background_color_render() {
-    $color = get_option('wooux_hover_background_color', '#959595');
-    echo '<input type="text" class="wooux-color-picker" name="wooux_hover_background_color" value="' . esc_attr($color) . '">';
+function wooux_plusminus_hover_color_render() {
+    $color = get_option('wooux_plusminus_hover_color', '#959595');
+    echo '<input type="text" class="wooux-color-picker" name="wooux_plusminus_hover_color" value="' . esc_attr($color) . '">';
 }
 
 

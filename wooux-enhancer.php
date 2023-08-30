@@ -114,6 +114,17 @@ function wooux_add_quantity_buttons_script() {
                     input.val((input.val() - 0) - 1).trigger('change');
                 }
             });
+
+            // Check stock quantity and hide buttons if needed
+            $('.input-button-group').each(function() {
+                var $this = $(this);
+                var quantityInput = $this.find('input.qty');
+                var stockQuantity = parseInt(quantityInput.attr('max'), 10);
+                
+                if (isNaN(stockQuantity) || stockQuantity < 2) {
+                    $this.find('.wooux-plus, .wooux-minus').hide();
+                }
+            });
         });
     </script>
     <?php
@@ -123,8 +134,8 @@ add_action('wp_footer', 'wooux_add_quantity_buttons_script');
 
 // Generate and output CSS rules
 function wooux_generate_custom_css() {
-    $background_color = get_option('wooux_background_color', '#B1B1B1');
-    $hover_background_color = get_option('wooux_hover_background_color', '#959595');
+    $background_color = get_option('wooux_plusminus_background', '#B1B1B1');
+    $hover_background_color = get_option('wooux_plusminus_hover_color', '#959595');
 
     $css = "
         .woocommerce .quantity .wooux-plus, 
