@@ -46,22 +46,31 @@ function wooux_admin_page() {
     }
   </style>
 
-<div style="border: 1px solid #B1B1B1; border-radius: 4px; width: 300px; padding: 15px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #FEFEFE;">
-  
+<!-- Massruum card -->
+<div style="display: flex; align-items: flex-start; border: 1px solid #B1B1B1; border-radius: 4px; width: 420px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #FEFEFE;">
+
     <!-- Massruum Logo -->
-    <a href="https://massruum.ee/en" title="Massruum, We Build Ecommerce Sites"><img src="<?php echo plugins_url('assets/massruum-logo.svg', __FILE__); ?>" alt="Massruum Logo" style="width: 80px; height: 80px; margin-bottom: 0px;"></a>
-    <h2>Massruum</h2>
-  
+    <div style="flex: 0 0 80px;">
+        <a href="https://massruum.ee/en" title="Massruum, We Build Ecommerce Sites">
+            <img src="<?php echo plugins_url('assets/massruum-logo.svg', __FILE__); ?>" alt="Massruum Logo" style="width: 80px; height: 80px;">
+        </a>
+    </div>
+
     <!-- Text -->
-    <p style="margin-bottom: 10px;">Experience issues with WordPress or WooCommerce?</p>
-    <p style="margin-bottom: 10px;">You're not alone, and we've got your back.</p>
-  <br/>
-    <!-- Call to Action -->
-    <a href="https://massruum.ee/en/contact/" class="wp-button" title="Contact Massruum today and let's work together!">
-      Contact us now
-    </a>
-  
-  </div> <!-- massruum card end-->
+    <div style="flex: 1; margin-left: 15px; text-align: left;">
+        <h2 style="margin-top: 0; margin-bottom: 10px;">Massruum</h2>
+        <p style="margin-bottom: 10px;">Experience issues with WordPress or WooCommerce?</p>
+        <p style="margin-bottom: 10px;">You're not alone, and we've got your back.</p>
+        <p style="margin-top: 32px;"><a href="https://massruum.ee/en/contact/" class="wp-button" title="Contact Massruum today and let's work together!">
+            Contact us
+        </a></p>
+    </div>
+
+
+</div>
+
+
+
 
 
     </div> <!-- admin page end-->
