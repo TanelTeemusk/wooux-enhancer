@@ -1,7 +1,4 @@
 <?php
-function wooux_test_function() {
-    // This is a test function.
-}
 
 function wooux_admin_page() {
     ?>
@@ -22,7 +19,6 @@ function wooux_admin_page() {
     ?>
     <div class="wrap">
         <h2><?php _e('WooUX Enhancer Settings', 'wooux-enhancer'); ?></h2>
-        <h3>Quantity selector options:</h3>
         <form action="options.php" method="post">
             <?php
             settings_fields('wooux-enhancer');
@@ -30,10 +26,48 @@ function wooux_admin_page() {
             submit_button();
             ?>
         </form>
-    </div>
+
+
+<style>
+    .wp-button {
+      background: #0073aa;
+      border-color: #0073aa;
+      color: #fff;
+      text-decoration: none;
+      text-shadow: none;
+      cursor: pointer;
+      border-radius: 3px;
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+    .wp-button:hover {
+      background: #008ec2;
+      color: #fff;
+    }
+  </style>
+
+<div style="border: 1px solid #B1B1B1; border-radius: 4px; width: 300px; padding: 15px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #FEFEFE;">
+  
+    <!-- Massruum Logo -->
+    <a href="https://massruum.ee/en" title="Massruum, We Build Ecommerce Sites"><img src="<?php echo plugins_url('assets/massruum-logo.svg', __FILE__); ?>" alt="Massruum Logo" style="width: 80px; height: 80px; margin-bottom: 0px;"></a>
+    <h2>Massruum</h2>
+  
+    <!-- Text -->
+    <p style="margin-bottom: 10px;">Experience issues with WordPress or WooCommerce?</p>
+    <p style="margin-bottom: 10px;">You're not alone, and we've got your back.</p>
+  <br/>
+    <!-- Call to Action -->
+    <a href="https://massruum.ee/en/contact/" class="wp-button" title="Contact Massruum today and let's work together!">
+      Contact us now
+    </a>
+  
+  </div> <!-- massruum card end-->
+
+
+    </div> <!-- admin page end-->
+
     <?php
 }
-
 
 // Register settings, sections, and fields
 function wooux_settings_init() {
@@ -64,7 +98,7 @@ function wooux_settings_init() {
     );
 }
 
-// Render background color field
+
 // Render background color field
 function wooux_plusminus_background_render() {
     $color = get_option('wooux_plusminus_background', '#B1B1B1');

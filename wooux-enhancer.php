@@ -81,7 +81,6 @@ function wooux_add_quantity_buttons_script() {
             $('.input-button-group').find('span:not([class])').remove();
             // Remove max attribute from quantity input
             $('input[name="quantity"]').removeAttr('max');
-            // $('input[type="number"]').removeAttr('max');
 
             $('.input-button-group').on('click', '.wooux-plus', function(e) {
                 var input = $(this).siblings('input.qty');
@@ -115,13 +114,14 @@ function wooux_add_quantity_buttons_script() {
                 }
             });
 
-            // Check stock quantity and hide buttons if needed
+            // Check if displayed quantity input is visible and hide buttons if not
             $('.input-button-group').each(function() {
                 var $this = $(this);
-                var quantityInput = $this.find('input.qty');
-                var stockQuantity = parseInt(quantityInput.attr('max'), 10);
+                var displayedQuantityInput = $this.find('.qty:not([type="hidden"])');
                 
-                if (isNaN(stockQuantity) || stockQuantity < 2) {
+                if (displayedQuantityInput.is(':visible')) {
+                    $this.find('.wooux-plus, .wooux-minus').show();
+                } else {
                     $this.find('.wooux-plus, .wooux-minus').hide();
                 }
             });

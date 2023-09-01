@@ -42,7 +42,7 @@
 		padding: 0 7px;
 		transition: background .3s ease;
 		
-		display: flex;
+		display: flex !important;
 		align-items: center;
 		justify-content: center;
 	}
@@ -51,6 +51,14 @@
 	.woocommerce .quantity .wooux-minus:hover {
 		/*background: #a0a0a0;*/
 	}
+
+.woocommerce div.product .et_pb_wc_add_to_cart:last-child form.cart, .woocommerce-page div.product .et_pb_wc_add_to_cart:last-child form.cart {
+    margin-bottom: 0 !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 	
 /* align center btn for shop cart */
@@ -95,7 +103,7 @@
 /* none arrow for input	 */
 	input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-		display: none; <- Crashes Chrome on hover
+		display: none; 
 		-webkit-appearance: none;
 		margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 	}
